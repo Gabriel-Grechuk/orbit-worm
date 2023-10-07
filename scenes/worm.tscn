@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7atpw8buhwrc"]
+
+[ext_resource type="PackedScene" uid="uid://4yp5hpgrbvaq" path="res://res/worm.glb" id="1_iuih2"]
+
+[node name="worm" instance=ExtResource("1_iuih2")]
