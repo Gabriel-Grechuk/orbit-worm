@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwj2a17k8uq8o"]
+
+[ext_resource type="PackedScene" uid="uid://c7atpw8buhwrc" path="res://scenes/worm.tscn" id="1_ft6po"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bprk6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0udpr"]
+sky_material = SubResource("ProceduralSkyMaterial_bprk6")
+
+[sub_resource type="Environment" id="Environment_j1pub"]
+background_mode = 2
+sky = SubResource("Sky_0udpr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Environment" id="Environment_eydnc"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_51xhc"]
+
+[node name="main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j1pub")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.52375, -0.177608, 0.833152, -0.0432425, 0.97122, 0.234225, -0.850774, -0.158703, 0.500996, 26.3656, 9.88887, 25.2285)
+environment = SubResource("Environment_eydnc")
+attributes = SubResource("CameraAttributesPhysical_51xhc")
+
+[node name="worm" parent="." instance=ExtResource("1_ft6po")]
