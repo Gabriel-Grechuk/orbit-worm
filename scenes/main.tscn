@@ -29,7 +29,7 @@ shadow_enabled = true
 environment = SubResource("Environment_j1pub")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.52375, -0.177608, 0.833152, -0.0432425, 0.97122, 0.234225, -0.850774, -0.158703, 0.500996, 26.3656, 9.88887, 25.2285)
+transform = Transform3D(0.495714, -0.340001, 0.799167, -0.00896539, 0.918131, 0.396175, -0.86844, -0.203554, 0.452082, 26.4276, 20.9044, 25.0051)
 environment = SubResource("Environment_eydnc")
 attributes = SubResource("CameraAttributesPhysical_51xhc")
 
