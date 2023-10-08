@@ -9,8 +9,11 @@ const vel = 0.05
 
 var time = 0
 
+
 func _sin(num):
-	return sin(num * 0.60) / 4
+	var viscosity = 1 - get_node("/root/GlobalState").viscosity
+	var gravity = 1 - get_node("/root/GlobalState").gravity
+	return sin(num * 0.60 * viscosity) / 4 * gravity
 
 func _process(delta):
 	time += delta
@@ -96,4 +99,6 @@ func _process(delta):
 
 	bone = skel.find_bone("Bone.025")
 	skel.set_bone_pose_rotation(bone, Quaternion(0.0, 0.0, _sin(muscles[25]), 1.0))
+
+
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfcumjj142se6"]
+[gd_scene load_steps=13 format=3 uid="uid://cnfwi2kwiydwg"]
 
 [ext_resource type="Texture2D" uid="uid://dlpmxwtywaveu" path="res://res/space-view.jpg" id="1_wse2o"]
 [ext_resource type="PackedScene" uid="uid://c7atpw8buhwrc" path="res://scenes/worm.tscn" id="1_xvy66"]
@@ -15,6 +15,13 @@ background_mode = 2
 sky = SubResource("Sky_37ka4")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20fwp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_880of"]
+material = SubResource("StandardMaterial3D_20fwp")
+height = 51.504
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_baghg"]
 
@@ -38,7 +45,11 @@ shadow_enabled = true
 environment = SubResource("Environment_65kgs")
 
 [node name="worm" parent="." instance=ExtResource("1_xvy66")]
-transform = Transform3D(0.999999, 0.00114432, 0.000938423, -0.00114408, 0.999999, -0.000251228, -0.000938712, 0.000250148, 1, 26.3536, 1.46806, 5.33643)
+transform = Transform3D(0.999999, 0.00114432, 0.000938423, -0.00114408, 0.999999, -0.000251228, -0.000938712, 0.000250148, 1, 26.3536, -2.97734, 5.33643)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="worm"]
+transform = Transform3D(-0.00430619, -0.0308251, 0.999516, -0.0136303, -0.999429, -0.0308816, 0.999898, -0.0137567, 0.00388356, -2.82298, -5.13123, -1.2946)
+mesh = SubResource("CylinderMesh_880of")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916138, -20.8377, 5.52871)
