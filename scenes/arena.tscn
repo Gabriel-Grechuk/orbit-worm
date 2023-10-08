@@ -1,14 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp1gg6vntsfxi"]
+[gd_scene load_steps=8 format=3 uid="uid://cp1gg6vntsfxi"]
 
 [ext_resource type="PackedScene" uid="uid://c7atpw8buhwrc" path="res://scenes/worm.tscn" id="1_xvy66"]
 [ext_resource type="Script" path="res://camera_script.gd" id="2_51yp3"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpaay"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
 [sub_resource type="Sky" id="Sky_0udpr"]
-sky_material = SubResource("ProceduralSkyMaterial_gpaay")
+radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_1e7qg"]
 background_mode = 2
@@ -27,8 +23,8 @@ size = Vector3(250, 0.965, 250)
 [node name="arena" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
+transform = Transform3D(-0.364228, -0.819793, -0.441902, -0.548071, -0.19495, 0.813396, -0.752965, 0.538455, -0.378298, 24.7184, 144.752, 44.1353)
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1e7qg")
@@ -37,7 +33,7 @@ environment = SubResource("Environment_1e7qg")
 transform = Transform3D(0.999999, 0.00114432, 0.000938423, -0.00114408, 0.999999, -0.000251228, -0.000938712, 0.000250148, 1, 0.00996971, 0.108619, -0.0345612)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.932, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916138, -20.8377, 5.52871)
 physics_material_override = SubResource("PhysicsMaterial_baghg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -52,5 +48,5 @@ mesh = SubResource("BoxMesh_uxbqf")
 script = ExtResource("2_51yp3")
 
 [node name="camera" type="Camera3D" parent="camera_anchor"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 16.1308, 111.172, 23.3931)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.98407, 111.172, 23.3931)
 fov = 83.9
