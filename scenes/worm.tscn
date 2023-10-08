@@ -1,114 +1,534 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7atpw8buhwrc"]
+[gd_scene load_steps=28 format=3 uid="uid://c7atpw8buhwrc"]
 
 [ext_resource type="PackedScene" uid="uid://4yp5hpgrbvaq" path="res://res/worm.glb" id="1_iuih2"]
+[ext_resource type="Script" path="res://scripts/worm_muscle_signals.gd" id="2_nhrsj"]
+[ext_resource type="Script" path="res://scripts/physical_bones.gd" id="3_emt1k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsuuj"]
-albedo_color = Color(0, 1, 1, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ynpo"]
+radius = 0.378857
+height = 3.78857
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdt1n"]
-albedo_color = Color(0, 1, 1, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2beh"]
+radius = 0.397108
+height = 3.97108
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_303h7"]
-albedo_color = Color(0, 1, 1, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_om4dl"]
+radius = 0.406466
+height = 4.06466
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_csloy"]
+radius = 0.396186
+height = 3.96186
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1m2"]
+radius = 0.399675
+height = 3.99675
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pyixp"]
+radius = 0.40696
+height = 4.0696
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ln6c"]
+radius = 0.394699
+height = 3.94699
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ilkwd"]
+radius = 0.396879
+height = 3.96879
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hj33b"]
+radius = 0.406212
+height = 4.06212
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyyxx"]
+radius = 0.398842
+height = 3.98842
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sdeho"]
+radius = 0.393802
+height = 3.93802
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iujg7"]
+radius = 0.393571
+height = 3.93571
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5288x"]
+radius = 0.408481
+height = 4.08481
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lrig2"]
+radius = 0.403476
+height = 4.03476
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_34xdo"]
+radius = 0.394567
+height = 3.94567
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_084qy"]
+radius = 0.402861
+height = 4.02861
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eqyj2"]
+radius = 0.40116
+height = 4.0116
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewimx"]
+radius = 0.405415
+height = 4.05415
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2wiu7"]
+radius = 0.391338
+height = 3.91338
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m6on6"]
+radius = 0.397976
+height = 3.97976
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vctlc"]
+radius = 0.401485
+height = 4.01485
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vjcx"]
+radius = 0.39513
+height = 3.9513
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5u53f"]
+radius = 0.398461
+height = 3.98461
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ihm0w"]
+radius = 0.40805
+height = 4.0805
 
 [node name="worm" instance=ExtResource("1_iuih2")]
 
+[node name="Armature_001" parent="." index="0"]
+script = ExtResource("2_nhrsj")
+
 [node name="Skeleton3D" parent="Armature_001" index="0"]
-transform = Transform3D(0.999999, 5.58794e-09, -3.6378e-12, 9.31323e-10, 0.999999, 2.5721e-14, -9.23206e-13, -1.63357e-09, 0.999999, 0.0076381, 0.0130072, -0.00962722)
-
-[node name="Cube" parent="Armature_001/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_rsuuj")
-
-[node name="Cube_001" parent="Armature_001/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
-
-[node name="Cube_002" parent="Armature_001/Skeleton3D" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_303h7")
+transform = Transform3D(0.999999, 5.58794e-09, -3.6378e-12, 9.31323e-10, 0.999999, 2.5721e-14, -9.23206e-13, -1.63357e-09, 0.999999, 0, 0, 0)
+bones/0/rotation = Quaternion(0.000474975, 0.000474975, -0.000525026, 0.999475)
+bones/1/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 0.999475)
+bones/2/rotation = Quaternion(0.000474975, 0.000474975, 0.00247497, 1.00048)
+bones/3/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/4/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/5/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/6/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/7/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/8/position = Vector3(0.000474975, 0.000474975, 0.000474975)
+bones/8/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/9/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/10/rotation = Quaternion(0.00347497, 0.000474975, 0.000474975, 1.00048)
+bones/11/rotation = Quaternion(0.000474975, 0.00147497, 0.000474975, 1.00048)
+bones/12/rotation = Quaternion(0.000474975, 0.000474975, -0.000525026, 1.00048)
+bones/13/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 0.999475)
+bones/14/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/15/rotation = Quaternion(0.000474975, 0.000474975, -0.000525026, 1.00048)
+bones/16/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 0.999475)
+bones/17/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 0.999475)
+bones/18/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/19/rotation = Quaternion(0.000474975, -0.000525026, 0.000474975, 1.00048)
+bones/20/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/21/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/22/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/23/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+bones/24/rotation = Quaternion(0.000474975, 0.000474975, 0.000474975, 1.00048)
+script = ExtResource("3_emt1k")
 
 [node name="Cube_003" parent="Armature_001/Skeleton3D" index="3"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_004" parent="Armature_001/Skeleton3D" index="4"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_005" parent="Armature_001/Skeleton3D" index="5"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_006" parent="Armature_001/Skeleton3D" index="6"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_007" parent="Armature_001/Skeleton3D" index="7"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_008" parent="Armature_001/Skeleton3D" index="8"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_009" parent="Armature_001/Skeleton3D" index="9"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_010" parent="Armature_001/Skeleton3D" index="10"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_011" parent="Armature_001/Skeleton3D" index="11"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_012" parent="Armature_001/Skeleton3D" index="12"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_013" parent="Armature_001/Skeleton3D" index="13"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_014" parent="Armature_001/Skeleton3D" index="14"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_015" parent="Armature_001/Skeleton3D" index="15"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_016" parent="Armature_001/Skeleton3D" index="16"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_017" parent="Armature_001/Skeleton3D" index="17"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_018" parent="Armature_001/Skeleton3D" index="18"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_019" parent="Armature_001/Skeleton3D" index="19"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_020" parent="Armature_001/Skeleton3D" index="20"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_021" parent="Armature_001/Skeleton3D" index="21"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_022" parent="Armature_001/Skeleton3D" index="22"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_023" parent="Armature_001/Skeleton3D" index="23"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
 
 [node name="Cube_024" parent="Armature_001/Skeleton3D" index="24"]
 transform = Transform3D(1, 4.65661e-10, 0, 0, 1, 0, -1.33227e-14, -1.20171e-10, 1, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_bdt1n")
+
+[node name="Physical Bone Bone" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="25"]
+transform = Transform3D(1.00002, 0.000957939, -0.00102868, -0.00105139, -0.000998804, -0.998312, -0.00095019, 1.0071, -0.00108956, 1.77237, -1.23641, 0.330821)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000432334, -0.000172385, 1.91057)
+body_offset = Transform3D(1.00002, 1.28988e-06, 2.07387e-05, -1.2191e-06, -4.11046e-05, -0.998313, 7.76723e-07, 1.0071, -0.000141191, 0.00039272, 1.90734, 0.000443364)
+bone_name = "Bone"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_2ynpo")
+
+[node name="Physical Bone Bone_001" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="26"]
+transform = Transform3D(0.998853, 0.0019002, -0.000101274, -8.90791e-05, -0.00190249, -1.00003, -0.00189997, 1.00002, -0.00189906, 1.77372, 2.63121, 0.335938)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000438181, 7.01448e-07, 1.98634)
+body_offset = Transform3D(0.998855, 3.1048e-07, 6.84988e-07, 9.15257e-06, -5.1379e-07, -1.00003, -2.12295e-06, 1.00002, 2.74651e-06, -0.00043904, 1.9864, -6.15604e-06)
+bone_name = "Bone.001"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_d2beh")
+
+[node name="Physical Bone Bone_002" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="27"]
+transform = Transform3D(1.00087, 0.00284889, 0.00486852, 0.00485703, -0.00283836, -1.00008, -0.00286737, 0.999997, -0.00286735, 1.76399, 6.65776, 0.34579)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000434771, -0.000217614, 2.04171)
+body_offset = Transform3D(1.00088, -2.65613e-06, 2.47136e-05, 1.20793e-06, 1.08416e-05, -1.0001, -2.71217e-05, 1.00001, -4.04016e-06, -0.000485614, 2.04191, 0.000225876)
+bone_name = "Bone.002"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_om4dl")
+
+[node name="Physical Bone Bone_003" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="28"]
+transform = Transform3D(1.00063, 0.00380614, 0.0057915, 0.00580326, -0.00379252, -1.00003, -0.0037879, 1, -0.00381754, 1.74323, 10.665, 0.358972)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60985e-05, -4.23714e-05, 1.98452)
+body_offset = Transform3D(1.00065, -2.53785e-08, 1.54413e-06, -4.63706e-06, 1.13176e-06, -1.00005, -1.34646e-06, 1.00001, -1.73942e-06, 4.30644e-05, 1.98462, 4.58239e-05)
+bone_name = "Bone.003"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_csloy")
+
+[node name="Physical Bone Bone_004" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="29"]
+transform = Transform3D(0.99969, 0.00472146, 0.00673158, 0.0067628, -0.00472597, -0.999967, -0.00472969, 0.991716, -0.00476902, 1.71801, 14.6299, 0.376338)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000353333, -0.000388685, 1.98772)
+body_offset = Transform3D(0.999724, -9.16421e-07, -3.48035e-06, 7.04732e-06, -2.79999e-05, -1, -1.56881e-06, 0.991738, 8.36153e-08, -0.000346318, 1.98772, 0.000385309)
+bone_name = "Bone.004"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_bo1m2")
+
+[node name="Physical Bone Bone_005" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="30"]
+transform = Transform3D(1.00056, 0.00572381, 0.00771021, 0.00772564, -0.00567922, -1.00059, -0.00567735, 1.00004, -0.00572566, 1.68899, 18.6818, 0.397282)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39614e-05, -5.88818e-05, 2.04179)
+body_offset = Transform3D(1.00061, 5.57723e-06, 2.57771e-05, 8.93883e-06, 8.25079e-07, -1.00064, -3.72529e-09, 1.00007, 1.65407e-06, -0.000136644, 2.04309, 5.55087e-05)
+bone_name = "Bone.005"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_005" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_pyixp")
+
+[node name="Physical Bone Bone_006" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="31"]
+transform = Transform3D(1.00116, 0.00667409, 0.00862426, 0.00872601, -0.00662379, -0.99994, -0.00662911, 1.00006, -0.00667907, 1.65645, 22.6949, 0.42247)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8697e-05, -0.000376082, 1.98672)
+body_offset = Transform3D(1.00122, -1.67033e-06, 1.1567e-06, 4.81214e-05, -1.6999e-06, -1, -3.84543e-06, 1.00011, -2.4413e-07, 1.64211e-05, 1.98672, 0.000376608)
+bone_name = "Bone.006"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_006" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_4ln6c")
+
+[node name="Physical Bone Bone_007" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="32"]
+transform = Transform3D(0.999916, 0.00765732, 0.00957765, 0.00963297, -0.00757501, -0.999994, -0.00756307, 1.0025, -0.00763728, 1.61999, 26.6585, 0.450804)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000351678, -0.000313477, 2.00349)
+body_offset = Transform3D(0.999991, 4.74183e-06, 1.12504e-05, 9.56282e-06, 6.42022e-06, -1.00007, -3.03378e-06, 1.00256, -1.66558e-06, -0.000374213, 2.00363, 0.000317618)
+bone_name = "Bone.007"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_007" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ilkwd")
+
+[node name="Physical Bone Bone_008" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="33"]
+transform = Transform3D(0.998826, 0.0085949, 0.0105081, 0.010597, -0.00850113, -0.999576, -0.00847642, 1, -0.0086066, 1.61982, 26.6981, 0.453233)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00128897, 3.52053e-06, 2.04346)
+body_offset = Transform3D(0.998918, 2.22027e-06, 4.23007e-06, 2.80775e-05, 1.43332e-06, -0.999669, 1.60551e-05, 1.00008, -1.73508e-05, 0.00127894, 2.04278, 3.19555e-05)
+bone_name = "Bone.008"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_hj33b")
+
+[node name="Physical Bone Bone_009" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="34"]
+transform = Transform3D(0.998595, 0.00954442, 0.0114561, 0.0115408, -0.00944131, -0.999941, -0.00945104, 0.999515, -0.00954681, 1.57408, 30.7153, 0.490145)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000360531, -0.00050313, 1.99817)
+body_offset = Transform3D(0.998706, -3.7225e-06, 7.22148e-06, 1.70637e-05, -4.16049e-06, -1.00005, -2.07014e-05, 0.999605, 3.75975e-06, -0.000374496, 1.99827, 0.000495426)
+bone_name = "Bone.009"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_009" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tyyxx")
+
+[node name="Physical Bone Bone_010" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="35"]
+transform = Transform3D(0.999992, 0.0105885, 0.0123282, 0.0125011, -0.0163772, -0.999787, -0.0103775, 1.00035, -0.0165169, 1.52982, 34.7202, 0.542131)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00299848, -0.000221827, 2.01542)
+body_offset = Transform3D(1.00012, -9.51812e-07, 6.31437e-07, -4.67524e-07, 6.50974e-06, -1, 3.50084e-06, 1.00054, -1.1776e-05, 0.00299758, 2.01542, 0.00024569)
+bone_name = "Bone.010"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_010" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sdeho")
+
+[node name="Physical Bone Bone_011" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="36"]
+transform = Transform3D(0.999623, 0.0135475, 0.0132706, 0.0135105, -0.0172958, -0.999867, -0.0133149, 1.00032, -0.017467, 1.47671, 38.6829, 0.608852)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000681604, 0.000433247, 2.04073)
+body_offset = Transform3D(0.999803, -4.20678e-06, 3.56883e-06, 1.41393e-05, -1.42056e-07, -1.00011, -6.29295e-06, 1.00056, 5.15574e-07, 0.000674188, 2.04095, -0.000434548)
+bone_name = "Bone.011"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_011" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_iujg7")
+
+[node name="Physical Bone Bone_012" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="37"]
+transform = Transform3D(0.998718, 0.0145052, 0.0122026, 0.0124555, -0.0182188, -0.9998, -0.0142617, 0.999842, -0.0184103, 1.44538, 42.6827, 0.681279)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0201869, -0.00041171, 2.1057)
+body_offset = Transform3D(0.998897, -1.85892e-06, -7.59959e-07, 2.7772e-06, 6.18966e-06, -1.00004, 2.0666e-06, 1.00011, -9.0625e-06, 0.0201662, 2.10579, 0.000430882)
+bone_name = "Bone.012"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_012" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5288x")
+
+[node name="Physical Bone Bone_013" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="38"]
+transform = Transform3D(0.99983, 0.0154684, 0.0131342, 0.0134375, -0.0191637, -0.998929, -0.0152209, 0.999807, -0.0193906, 1.37452, 46.6847, 0.756789)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6524e-05, 4.42976e-05, 2.02593)
+body_offset = Transform3D(1.00004, -1.10921e-06, 6.32927e-06, 2.37301e-06, -8.74279e-07, -0.999204, -8.62405e-06, 1.00011, -4.13447e-05, 5.37038e-05, 2.02431, 3.94583e-05)
+bone_name = "Bone.013"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_013" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_lrig2")
+
+[node name="Physical Bone Bone_014" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="39"]
+transform = Transform3D(0.999714, 0.0165099, 0.0140774, 0.0144088, -0.0201941, -0.999889, -0.0161458, 1.00435, -0.0203298, 1.31996, 50.6715, 0.836768)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000264133, -0.000881945, 1.97717)
+body_offset = Transform3D(0.999948, 2.86289e-06, 1.53296e-06, 7.08178e-06, -3.23562e-06, -1.0002, -4.63426e-06, 1.00469, 2.89263e-06, -0.000267148, 1.97756, 0.000880361)
+bone_name = "Bone.014"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_014" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_34xdo")
+
+[node name="Physical Bone Bone_015" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="40"]
+transform = Transform3D(0.998859, 0.0173896, 0.013007, 0.0133901, -0.021046, -0.999848, -0.0170946, 0.999893, -0.0212902, 1.26694, 54.6412, 0.918625)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000465299, -0.000108385, 2.00243)
+body_offset = Transform3D(0.999095, -7.30529e-06, -2.31154e-06, 2.96477e-05, -7.53062e-06, -1.00016, 2.45124e-06, 1.00027, -2.64652e-05, 0.000469506, 2.00275, 0.000161409)
+bone_name = "Bone.015"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_015" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_084qy")
+
+[node name="Physical Bone Bone_016" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="41"]
+transform = Transform3D(0.999507, 0.0183593, 0.0139446, 0.0143466, -0.0219816, -0.999764, -0.0180459, 0.999946, -0.0222422, 1.21224, 58.6896, 1.00647)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000341817, 8.01615e-05, 2.02363)
+body_offset = Transform3D(0.999773, -2.48104e-06, 2.36928e-06, 6.50436e-06, -3.99325e-06, -1.00011, -7.61263e-06, 1.00036, -1.25891e-05, 0.000336945, 2.02385, -5.47171e-05)
+bone_name = "Bone.016"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_016" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_eqyj2")
+
+[node name="Physical Bone Bone_017" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="42"]
+transform = Transform3D(0.999771, 0.0193218, 0.0148772, 0.015315, -0.0229089, -0.999769, -0.0189785, 0.999836, -0.0232163, 1.15397, 62.701, 1.09774)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.64135e-05, -2.28271e-05, 2.02483)
+body_offset = Transform3D(1.00007, -2.70084e-06, 2.15881e-06, -8.49366e-07, 3.37267e-06, -1.00015, -6.13555e-06, 1.00029, -1.80126e-05, -0.000100791, 2.02513, 5.93066e-05)
+bone_name = "Bone.017"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_017" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ewimx")
+
+[node name="Physical Bone Bone_018" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="43"]
+transform = Transform3D(1.00008, 0.0202855, 0.0158214, 0.0162917, -0.0238455, -0.99979, -0.0198995, 0.999915, -0.0241849, 1.0937, 66.6447, 1.19251)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93055e-05, -0.00143506, 1.91584)
+body_offset = Transform3D(1.00041, -5.44824e-06, 1.48956e-05, -7.78586e-07, 4.10614e-06, -1.00021, 6.238e-06, 1.00041, -1.72623e-05, 6.07967e-05, 1.91624, 0.00146872)
+bone_name = "Bone.018"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_018" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_2wiu7")
+
+[node name="Physical Bone Bone_019" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="44"]
+transform = Transform3D(0.998836, 0.019248, 0.0166697, 0.0172164, -0.0248103, -0.999936, -0.0188242, 0.999622, -0.0251298, 1.02827, 70.5782, 1.28945)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00150711, -0.00143603, 1.93733)
+body_offset = Transform3D(0.999162, -3.25032e-06, -7.10096e-05, 2.09417e-05, -8.50327e-07, -1.00039, -1.54097e-05, 1.00012, 8.42387e-06, -0.00136828, 1.93809, 0.0014199)
+bone_name = "Bone.019"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_019" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_m6on6")
+
+[node name="Physical Bone Bone_021" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="45"]
+transform = Transform3D(0.999465, 0.0202136, 0.0176677, 0.0182092, -0.0257427, -0.999554, -0.0197513, 0.999648, -0.0261143, 0.961549, 74.5922, 1.39123)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00096925, -0.000391237, 1.97409)
+body_offset = Transform3D(0.999826, -4.59142e-06, 2.67103e-06, 2.9685e-05, 9.15141e-07, -1.00005, -5.70156e-06, 1.00018, -1.58519e-05, 0.000963807, 1.97419, 0.000422597)
+bone_name = "Bone.021"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_021" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_vctlc")
+
+[node name="Physical Bone Bone_022" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="46"]
+transform = Transform3D(0.999786, 0.0211737, 0.0185928, 0.0191644, -0.0266751, -0.99971, -0.0206756, 0.999952, -0.0270654, 0.883989, 78.5268, 1.49678)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00532317, -0.00128268, 1.89565)
+body_offset = Transform3D(1.00018, -1.82763e-05, -5.93625e-06, 4.50574e-06, 9.43959e-06, -1.00025, 1.64844e-06, 1.00053, 6.44912e-06, -0.00531292, 1.89613, 0.00127113)
+bone_name = "Bone.022"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_022" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5vjcx")
+
+[node name="Physical Bone Bone_023" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="47"]
+transform = Transform3D(0.99887, 0.0221661, 0.0195224, 0.0201273, -0.0276029, -0.999459, -0.0216103, 0.999691, -0.0280383, 0.805677, 82.4974, 1.60726)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00800465, -0.00229406, 1.91772)
+body_offset = Transform3D(0.999306, 1.11032e-05, -8.73581e-07, 9.2797e-06, 5.95086e-06, -1.00004, -2.92566e-05, 1.00032, -2.98029e-06, -0.00799739, 1.9178, 0.00230074)
+bone_name = "Bone.023"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_023" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5u53f")
+
+[node name="Physical Bone Bone_024" type="PhysicalBone3D" parent="Armature_001/Skeleton3D" index="48"]
+transform = Transform3D(1.00053, 0.0231285, 0.0204758, 0.0211156, -0.0285441, -0.999997, -0.0225886, 0.999946, -0.0290214, 0.730864, 86.6168, 1.72127)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000334117, 0.00106344, 2.0535)
+body_offset = Transform3D(1.00101, -1.90735e-06, 1.28541e-05, -1.37091e-05, 3.3559e-06, -1.00063, -4.75049e-05, 1.00062, 1.15129e-06, -0.000360847, 2.05479, -0.00106645)
+bone_name = "Bone.024"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature_001/Skeleton3D/Physical Bone Bone_024" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ihm0w")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwj2a17k8uq8o"]
 
-[ext_resource type="PackedScene" uid="uid://cp1gg6vntsfxi" path="res://scenes/arena.tscn" id="1_yecrb"]
+[ext_resource type="PackedScene" uid="uid://bfcumjj142se6" path="res://scenes/arena.tscn" id="1_yecrb"]
 
 [sub_resource type="GDScript" id="GDScript_b50eq"]
 resource_local_to_scene = true
@@ -58,7 +58,7 @@ size = Vector2i(1160, 655)
 render_target_update_mode = 4
 
 [node name="arena" parent="containerAreaViewPort/areaViewPort" instance=ExtResource("1_yecrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516098, -1.52588e-05, 1.18103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91589, 12.6161, -4.22161)
 
 [node name="zoomIn" type="Button" parent="."]
 offset_left = 66.0

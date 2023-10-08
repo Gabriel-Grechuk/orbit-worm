@@ -1,43 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp1gg6vntsfxi"]
+[gd_scene load_steps=11 format=3 uid="uid://bfcumjj142se6"]
 
+[ext_resource type="Texture2D" uid="uid://dlpmxwtywaveu" path="res://res/space-view.jpg" id="1_wse2o"]
 [ext_resource type="PackedScene" uid="uid://c7atpw8buhwrc" path="res://scenes/worm.tscn" id="1_xvy66"]
 [ext_resource type="Script" path="res://camera_script.gd" id="2_51yp3"]
 
-[sub_resource type="Sky" id="Sky_0udpr"]
-radiance_size = 6
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uw2hm"]
+panorama = ExtResource("1_wse2o")
 
-[sub_resource type="Environment" id="Environment_1e7qg"]
+[sub_resource type="Sky" id="Sky_37ka4"]
+sky_material = SubResource("PanoramaSkyMaterial_uw2hm")
+
+[sub_resource type="Environment" id="Environment_65kgs"]
 background_mode = 2
-sky = SubResource("Sky_0udpr")
+sky = SubResource("Sky_37ka4")
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_baghg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4a5jd"]
-size = Vector3(250, 164.639, 250)
+size = Vector3(250, 10.7866, 250)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8or3"]
+albedo_color = Color(0.494118, 0.509804, 0.619608, 0.54902)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uxbqf"]
+material = SubResource("StandardMaterial3D_c8or3")
 size = Vector3(250, 0.965, 250)
 
 [node name="arena" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.364228, -0.819793, -0.441902, -0.548071, -0.19495, 0.813396, -0.752965, 0.538455, -0.378298, 24.7184, 144.752, 44.1353)
-sky_mode = 1
+transform = Transform3D(-0.809017, -0.559333, 0.18066, 0, 0.307357, 0.951594, -0.587785, 0.769856, -0.248657, 0, 0, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1e7qg")
+environment = SubResource("Environment_65kgs")
 
 [node name="worm" parent="." instance=ExtResource("1_xvy66")]
-transform = Transform3D(0.999999, 0.00114432, 0.000938423, -0.00114408, 0.999999, -0.000251228, -0.000938712, 0.000250148, 1, 0.00996971, 0.108619, -0.0345612)
+transform = Transform3D(0.999999, 0.00114432, 0.000938423, -0.00114408, 0.999999, -0.000251228, -0.000938712, 0.000250148, 1, 26.3536, 1.46806, 5.33643)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916138, -20.8377, 5.52871)
 physics_material_override = SubResource("PhysicsMaterial_baghg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 104.146, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8569, 0)
 shape = SubResource("BoxShape3D_4a5jd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -48,5 +56,4 @@ mesh = SubResource("BoxMesh_uxbqf")
 script = ExtResource("2_51yp3")
 
 [node name="camera" type="Camera3D" parent="camera_anchor"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.98407, 111.172, 23.3931)
-fov = 83.9
+transform = Transform3D(1, 0, 0, 0, 0.694859, 0.719146, 0, -0.719146, 0.694859, 3.98407, 60.9996, 121.815)
