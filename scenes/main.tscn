@@ -1,36 +1,138 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwj2a17k8uq8o"]
+[gd_scene load_steps=3 format=3 uid="uid://bwj2a17k8uq8o"]
 
-[ext_resource type="PackedScene" uid="uid://c7atpw8buhwrc" path="res://scenes/worm.tscn" id="1_ft6po"]
+[ext_resource type="PackedScene" uid="uid://cp1gg6vntsfxi" path="res://scenes/arena.tscn" id="1_yecrb"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bprk6"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="GDScript" id="GDScript_b50eq"]
+resource_local_to_scene = true
+script/source = "extends Node
 
-[sub_resource type="Sky" id="Sky_0udpr"]
-sky_material = SubResource("ProceduralSkyMaterial_bprk6")
+var cameraAnchor
+var camera
 
-[sub_resource type="Environment" id="Environment_j1pub"]
-background_mode = 2
-sky = SubResource("Sky_0udpr")
-tonemap_mode = 2
-glow_enabled = true
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	cameraAnchor = get_node(\"containerAreaViewPort/areaViewPort/arena/camera_anchor\")
+	camera = get_node(\"containerAreaViewPort/areaViewPort/arena/camera_anchor/camera\")
 
-[sub_resource type="Environment" id="Environment_eydnc"]
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_51xhc"]
 
-[node name="main" type="Node3D"]
+func _on_up_pressed():
+	cameraAnchor.rotation.x = cameraAnchor.rotation.x - 0.1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_j1pub")
+func _on_down_pressed():
+	cameraAnchor.rotation.x = cameraAnchor.rotation.x + 0.1
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.495714, -0.340001, 0.799167, -0.00896539, 0.918131, 0.396175, -0.86844, -0.203554, 0.452082, 26.4276, 20.9044, 25.0051)
-environment = SubResource("Environment_eydnc")
-attributes = SubResource("CameraAttributesPhysical_51xhc")
 
-[node name="worm" parent="." instance=ExtResource("1_ft6po")]
+func _on_left_pressed():
+	cameraAnchor.rotation.y = cameraAnchor.rotation.y - 0.1
+
+
+func _on_right_pressed():
+	cameraAnchor.rotation.y = cameraAnchor.rotation.y + 0.1
+
+func _on_zoom_out_pressed():
+	camera.position.y = camera.position.y + 5
+
+
+func _on_zoom_in_pressed():
+	camera.position.y = camera.position.y - 5
+"
+
+[node name="Root" type="Node"]
+script = SubResource("GDScript_b50eq")
+
+[node name="containerAreaViewPort" type="SubViewportContainer" parent="."]
+anchors_preset = -1
+anchor_right = 0.03
+offset_right = 1125.44
+offset_bottom = 655.0
+stretch = true
+
+[node name="areaViewPort" type="SubViewport" parent="containerAreaViewPort"]
+handle_input_locally = false
+size = Vector2i(1160, 655)
+render_target_update_mode = 4
+
+[node name="arena" parent="containerAreaViewPort/areaViewPort" instance=ExtResource("1_yecrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516098, -1.52588e-05, 1.18103)
+
+[node name="zoomIn" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 548.0
+offset_right = 132.0
+offset_bottom = 602.0
+text = "Zoom +"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 56.0
+offset_top = 28.0
+offset_right = 168.0
+offset_bottom = 68.0
+text = "Gravity"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 58.0
+offset_top = 54.0
+offset_right = 170.0
+offset_bottom = 94.0
+text = "Viscosity"
+
+[node name="viscosity_slider" type="HSlider" parent="."]
+offset_left = 143.0
+offset_top = 61.0
+offset_right = 254.0
+offset_bottom = 77.0
+
+[node name="viscosity_gravity" type="HSlider" parent="."]
+offset_left = 142.0
+offset_top = 33.0
+offset_right = 253.0
+offset_bottom = 49.0
+
+[node name="up" type="Button" parent="."]
+offset_left = 1014.0
+offset_top = 442.0
+offset_right = 1067.0
+offset_bottom = 496.0
+text = "up"
+
+[node name="down" type="Button" parent="."]
+offset_left = 1016.0
+offset_top = 565.0
+offset_right = 1069.0
+offset_bottom = 619.0
+text = "Down
+"
+
+[node name="left" type="Button" parent="."]
+offset_left = 958.0
+offset_top = 502.0
+offset_right = 1007.0
+offset_bottom = 556.0
+text = "Left"
+
+[node name="right" type="Button" parent="."]
+offset_left = 1069.0
+offset_top = 503.0
+offset_right = 1118.0
+offset_bottom = 557.0
+text = "Right"
+
+[node name="zoomOut" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 481.0
+offset_right = 132.0
+offset_bottom = 535.0
+text = "Zoom -
+"
+
+[connection signal="pressed" from="zoomIn" to="." method="_on_zoom_in_pressed"]
+[connection signal="pressed" from="up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="zoomOut" to="." method="_on_zoom_out_pressed"]
